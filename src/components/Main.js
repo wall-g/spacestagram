@@ -16,13 +16,12 @@ function Main() {
     }
 
     let filtered = photos.filter(photo => photo.media_type !== "video");
-    console.log(filtered.length);
 
     return (
-        <div>
+        <div className='max-w-5xl mt-36 grid grid-cols-2 gap-8 mx-auto mb-10'>
             {
                 filtered.map((photo, index) => (
-                    <Photo name={photo.copyright} pic={photo.url} date={photo.date} key={index}/>
+                    <Photo name={photo.title} pic={photo.url} date={photo.date} key={index}/>
                 ))
             }
         </div>
