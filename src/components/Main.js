@@ -40,7 +40,7 @@ function Main() {
                                     <div>
                                     {   
                                         filtered.map((photo, index) => (
-                                            <Photo name={photo.title} pic={photo.url} date={photo.date} key={index}/>
+                                            <Photo name={photo.title} pic={photo.url} date={photo.date} key={index} story={photo.explanation}/>
                                         ))
                                     }
                                     </div>
