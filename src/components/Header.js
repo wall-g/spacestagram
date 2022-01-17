@@ -17,6 +17,7 @@ function Header(props) {
                     className=' p-1 bg-white border-2 text-gray-500 font-semibold pl-4 cursor-pointer sm:rounded-md w-full h-10 text-sm'
                     placeholderText="Search By Date"
                     minDate={new Date("2020-12-21")}
+                    maxDate={new Date().getTime() - 24*60*60*1000}
                     isClearable
                 />
             </div>
