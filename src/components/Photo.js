@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
 export default function Photo(props) {
@@ -14,6 +14,17 @@ export default function Photo(props) {
         e.preventDefault();
         setIsLiked(!isLiked);
     }
+
+    useEffect(() => {
+        const likedState = window.localStorage.getItem(props.date);
+        setIsLiked(JSON.parse(likedState));
+        
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    useEffect(() => {
+        window.localStorage.setItem(props.date, JSON.stringify(isLiked));
+    });
 
     return (
         <div className='sm:rounded overflow-hidden shadow-md bg-white pb-6 font-body mb-6'>
